@@ -4,7 +4,7 @@ import numpy as np
 from pyspark import SparkContext, SparkConf
 from pyspark.mllib.linalg import SparseVector
 
-import lsh
+from pyspark_lsh import lsh
 
 def read_text(sc, path):
     text = sc.textFile(path).collect()
@@ -45,4 +45,4 @@ if __name__ == "__main__":
     p = 65537
     m, n, b, c = args['bins'], args['numrows'], args['bands'], args['minbucketsize']
     model = lsh.run(data, p, m, n, b, c)
-    print 'Found %s clusters.' % model.buckets.count()
+    print('Found %s clusters.' % model.buckets.count())

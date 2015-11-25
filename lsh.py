@@ -1,4 +1,4 @@
-import hasher
+from pyspark_lsh import hasher
 import functools
 import numpy as np
 import scipy.spatial.distance as distance
